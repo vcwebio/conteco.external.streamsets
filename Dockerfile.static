@@ -1,5 +1,5 @@
 ##### BEGIN external-mapped/Dockerfile/iamge-header #####
-FROM streamsets/datacollector:3.8.2
+FROM streamsets/datacollector:3.10.1
 ##### END external-mapped/Dockerfile/image-header #####
 
 ##### BEGIN image/Dockerfile/build-instructions #####
@@ -17,8 +17,8 @@ LABEL io.vcweb.schema-version="1.0" \
       io.vcweb.ecosystem="conteco" \
       io.vcweb.type="external" \
       io.vcweb.name="streamsets" \
-      io.vcweb.tag="3.8.2" \
-      io.vcweb.base="streamsets/datacollector:3.8.2" \
+      io.vcweb.tag="3.10.1" \
+      io.vcweb.base="streamsets/datacollector:3.10.1" \
       io.vcweb.build="external-mapped" \
       io.vcweb.label="External Streamsets Datacollector image" \
       io.vcweb.description="Import of external Streamsets Datacollector image into the ContEco ecosystem." \
