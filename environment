@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+export CONTECO_LABEL="External Streamsets Datacollector image"
+export CONTECO_DESCRIPTION="Import of external Streamsets Datacollector image into the ContEco ecosystem."
+
+export CONTECO_TYPE="external"
+export CONTECO_NAME="streamsets"
+export CONTECO_TAG="3.8.2"
+
+export CONTECO_BASE="streamsets/datacollector:3.8.2"
+export CONTECO_BUILD="external-mapped"

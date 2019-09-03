@@ -1,0 +1,26 @@
+##### BEGIN external-mapped/Dockerfile/iamge-header #####
+FROM streamsets/datacollector:3.8.2
+##### END external-mapped/Dockerfile/image-header #####
+
+##### BEGIN image/Dockerfile/build-instructions #####
+USER root
+RUN apk add coreutils && apk add gettext && apk add jq && rm -rf /var/cache/apk/*
+##### END image/Dockerfile/build-instructions #####
+
+##### BEGIN external/Dockerfile/conteco #####
+COPY ./ /conteco/git-repository/
+##### END external/Dockerfile/conteco #####
+
+##### BEGIN external-mapped/Dockerfile/labels-footer #####
+LABEL io.vcweb.schema-version="1.0" \
+      io.vcweb.realm="vcwebio" \
+      io.vcweb.ecosystem="conteco" \
+      io.vcweb.type="external" \
+      io.vcweb.name="streamsets" \
+      io.vcweb.tag="3.8.2" \
+      io.vcweb.base="streamsets/datacollector:3.8.2" \
+      io.vcweb.build="external-mapped" \
+      io.vcweb.label="External Streamsets Datacollector image" \
+      io.vcweb.description="Import of external Streamsets Datacollector image into the ContEco ecosystem." \
+      io.vcweb.repository="/conteco/git-repository" 
+##### END external-mapped/Dockerfile/labels-footer #####
