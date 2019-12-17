@@ -1,16 +1,8 @@
-# conteco.external.streamsets
+# `external.streamsets` - ContEco
 
-Import of external Streamsets Datacollector image into the ContEco ecosystem.
+Streamsets Datacollector image with ContEco external prerequisites installed.
 
-## Current Import Version
-
-Current import is based on streamsets/datacollector:3.10.1
-
-## Import Modifications
-
-### Current Modifications
-
-The import build installs the following packages:
+## Installed External Prerequisites
 
 * coreutils
 * gettext - for availability of envsubst
@@ -18,6 +10,4 @@ The import build installs the following packages:
 
 ## Tags
 
-* 3.10.1 (latest)  
-* 3.8.2 
-
+* 3.10.1 (current)  

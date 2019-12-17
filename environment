@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-export CONTECO_LABEL="External Streamsets Datacollector image"
-export CONTECO_DESCRIPTION="Import of external Streamsets Datacollector image into the ContEco ecosystem."
+export CONTECO_LABEL="external.streamsets - ContEco"
+export CONTECO_DESCRIPTION="Streamsets Datacollector image with ContEco external prerequisites installed."
 
 export CONTECO_TYPE="external"
 export CONTECO_NAME="streamsets"

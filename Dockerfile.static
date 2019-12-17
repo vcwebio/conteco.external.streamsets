@@ -20,7 +20,7 @@ LABEL io.vcweb.schema-version="1.0" \
       io.vcweb.tag="3.10.1" \
       io.vcweb.base="streamsets/datacollector:3.10.1" \
       io.vcweb.build="external-mapped" \
-      io.vcweb.label="External Streamsets Datacollector image" \
-      io.vcweb.description="Import of external Streamsets Datacollector image into the ContEco ecosystem." \
+      io.vcweb.label="external.streamsets - ContEco" \
+      io.vcweb.description="Streamsets Datacollector image with ContEco external prerequisites installed." \
       io.vcweb.repository="/conteco/repo" 
 ##### END external-mapped/Dockerfile/labels-footer #####
