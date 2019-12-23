@@ -1,6 +1,7 @@
 # `external.streamsets` - ContEco
 
 Streamsets Datacollector image with ContEco external prerequisites installed.
+See `conteco.docs.overview` for more information on the ContEco ecosystem.
 
 ## Installed External Prerequisites
 
