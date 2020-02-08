@@ -1,4 +1,4 @@
-##### BEGIN external-mapped/Dockerfile/iamge-header #####
+##### BEGIN external-mapped/Dockerfile/image-header #####
 FROM $CONTECO_BASE
 ##### END external-mapped/Dockerfile/image-header #####
 
