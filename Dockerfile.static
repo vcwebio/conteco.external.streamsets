@@ -1,3 +1,8 @@
+##### BEGIN image/Dockerfile/header-instructions #####
+FROM streamsets/datacollector-libs:streamsets-datacollector-elasticsearch_5-lib-3.10.1 AS elastic
+FROM streamsets/datacollector-libs:streamsets-datacollector-apache-kafka_2_0-lib-3.10.1 AS kafka
+##### END image/Dockerfile/header-instructions #####
+
 ##### BEGIN external-mapped/Dockerfile/image-header #####
 FROM streamsets/datacollector:3.10.1
 ##### END external-mapped/Dockerfile/image-header #####
@@ -9,6 +14,8 @@ RUN apk update && apk add coreutils && apk add gettext && apk add jq && rm -rf /
 
 ##### BEGIN external/Dockerfile/conteco #####
 COPY ./ /conteco/repo/
+COPY --from=elastic /opt/streamsets-datacollector-3.10.1/streamsets-libs/streamsets-datacollector-elasticsearch_5-lib /opt/streamsets-datacollector-3.10.1/streamsets-libs/streamsets-datacollector-elasticsearch_5-lib
+COPY --from=kafka /opt/streamsets-datacollector-3.10.1/streamsets-libs/streamsets-datacollector-apache-kafka_2_0-lib /opt/streamsets-datacollector-3.10.1/streamsets-libs/streamsets-datacollector-apache-kafka_2_0-lib
 ##### END external/Dockerfile/conteco #####
 
 ##### BEGIN external-mapped/Dockerfile/labels-footer #####
@@ -22,5 +29,5 @@ LABEL io.vcweb.schema-version="1.0" \
       io.vcweb.build="external-mapped" \
       io.vcweb.label="external.streamsets - ContEco" \
       io.vcweb.description="Streamsets Datacollector image with ContEco external prerequisites installed." \
-      io.vcweb.repository="/conteco/repo" 
+      io.vcweb.repository="/conteco/repo"
 ##### END external-mapped/Dockerfile/labels-footer #####
