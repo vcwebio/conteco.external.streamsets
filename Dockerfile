@@ -20,7 +20,7 @@ COPY --from=kafka /opt/streamsets-datacollector-${CONTECO_TAG}/streamsets-libs/s
 
 ##### BEGIN external-mapped/Dockerfile/labels-footer #####
 LABEL $CONTECO_LABELSPACE.schema-version="1.0" \
-      $CONTECO_LABELSPACE.realm="$CONTECO_REALM" \
+      $CONTECO_LABELSPACE.realm="$CONTECO_REALM_RUNTIME" \
       $CONTECO_LABELSPACE.ecosystem="$CONTECO_ECOSYSTEM_RUNTIME" \
       $CONTECO_LABELSPACE.type="$CONTECO_TYPE" \
       $CONTECO_LABELSPACE.name="$CONTECO_NAME" \
