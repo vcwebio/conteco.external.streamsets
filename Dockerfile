@@ -14,8 +14,8 @@ RUN apk update && apk add coreutils && apk add gettext && apk add jq && rm -rf /
 
 ##### BEGIN external/Dockerfile/conteco #####
 COPY ./ /conteco/repo/
-COPY --from=elastic /opt/streamsets-datacollector-${CONTECO_TAG}/streamsets-libs/streamsets-datacollector-elasticsearch_5-lib /opt/streamsets-datacollector-${CONTECO_TAG}/streamsets-libs/streamsets-datacollector-elasticsearch_5-lib
-COPY --from=kafka /opt/streamsets-datacollector-${CONTECO_TAG}/streamsets-libs/streamsets-datacollector-apache-kafka_2_0-lib /opt/streamsets-datacollector-${CONTECO_TAG}/streamsets-libs/streamsets-datacollector-apache-kafka_2_0-lib
+COPY --from=elastic /opt/streamsets-datacollector-3.19.0/streamsets-libs/streamsets-datacollector-elasticsearch_5-lib /opt/streamsets-datacollector-${CONTECO_TAG}/streamsets-libs/streamsets-datacollector-elasticsearch_5-lib
+COPY --from=kafka /opt/streamsets-datacollector-3.19.0/streamsets-libs/streamsets-datacollector-apache-kafka_2_0-lib /opt/streamsets-datacollector-${CONTECO_TAG}/streamsets-libs/streamsets-datacollector-apache-kafka_2_0-lib
 ##### END external/Dockerfile/conteco #####
 
 ##### BEGIN external-mapped/Dockerfile/labels-footer #####
