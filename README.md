@@ -11,5 +11,5 @@ See `conteco.docs.overview` for more information on the ContEco ecosystem.
 
 ## Tags
 
-* 3.16.0 (current)  
+* 3.19.0 (current)  
 * 3.10.1
