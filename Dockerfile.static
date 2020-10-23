@@ -1,21 +1,15 @@
 ##### BEGIN image/Dockerfile/header-instructions #####
-FROM streamsets/datacollector-libs:streamsets-datacollector-elasticsearch_5-lib-3.19.0 AS elastic
-FROM streamsets/datacollector-libs:streamsets-datacollector-apache-kafka_2_0-lib-3.19.0 AS kafka
+FROM streamsets/datacollector-libs:streamsets-datacollector-elasticsearch_5-lib-3.19.0-latest AS elastic
+FROM streamsets/datacollector-libs:streamsets-datacollector-apache-kafka_2_0-lib-3.19.0-latest AS kafka
 ##### END image/Dockerfile/header-instructions #####
 
 ##### BEGIN external-mapped/Dockerfile/image-header #####
-FROM streamsets/datacollector:3.19.0
+FROM streamsets/datacollector:3.19.0-latest
 ##### END external-mapped/Dockerfile/image-header #####
 
-##### BEGIN image/Dockerfile/build-instructions #####
-USER root
-RUN apk update && apk add coreutils && apk add gettext && apk add jq && rm -rf /var/cache/apk/*
-##### END image/Dockerfile/build-instructions #####
-
 ##### BEGIN external/Dockerfile/conteco #####
-COPY ./ /conteco/repo/
-COPY --from=elastic /opt/streamsets-datacollector-3.19.0/streamsets-libs/streamsets-datacollector-elasticsearch_5-lib /opt/streamsets-datacollector-3.19.0/streamsets-libs/streamsets-datacollector-elasticsearch_5-lib
-COPY --from=kafka /opt/streamsets-datacollector-3.19.0/streamsets-libs/streamsets-datacollector-apache-kafka_2_0-lib /opt/streamsets-datacollector-3.19.0/streamsets-libs/streamsets-datacollector-apache-kafka_2_0-lib
+COPY --from=elastic /opt/streamsets-datacollector-3.19.0/streamsets-libs/streamsets-datacollector-elasticsearch_5-lib /opt/streamsets-datacollector-3.19.0-latest/streamsets-libs/streamsets-datacollector-elasticsearch_5-lib
+COPY --from=kafka /opt/streamsets-datacollector-3.19.0/streamsets-libs/streamsets-datacollector-apache-kafka_2_0-lib /opt/streamsets-datacollector-3.19.0-latest/streamsets-libs/streamsets-datacollector-apache-kafka_2_0-lib
 ##### END external/Dockerfile/conteco #####
 
 ##### BEGIN external-mapped/Dockerfile/labels-footer #####
@@ -24,8 +18,8 @@ LABEL io.vcweb.schema-version="1.0" \
       io.vcweb.ecosystem="conteco" \
       io.vcweb.type="external" \
       io.vcweb.name="streamsets" \
-      io.vcweb.tag="3.19.0" \
-      io.vcweb.base="streamsets/datacollector:3.19.0" \
+      io.vcweb.tag="3.19.0-latest" \
+      io.vcweb.base="streamsets/datacollector:3.19.0-latest" \
       io.vcweb.build="external-mapped" \
       io.vcweb.label="external.streamsets - ContEco" \
       io.vcweb.description="Streamsets Datacollector image with ContEco external prerequisites installed." \

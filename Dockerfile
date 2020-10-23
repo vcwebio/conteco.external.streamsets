@@ -7,13 +7,7 @@ FROM streamsets/datacollector-libs:streamsets-datacollector-apache-kafka_2_0-lib
 FROM $CONTECO_BASE
 ##### END external-mapped/Dockerfile/image-header #####
 
-##### BEGIN image/Dockerfile/build-instructions #####
-USER root
-RUN apk update && apk add coreutils && apk add gettext && apk add jq && rm -rf /var/cache/apk/*
-##### END image/Dockerfile/build-instructions #####
-
 ##### BEGIN external/Dockerfile/conteco #####
-COPY ./ /conteco/repo/
 COPY --from=elastic /opt/streamsets-datacollector-3.19.0/streamsets-libs/streamsets-datacollector-elasticsearch_5-lib /opt/streamsets-datacollector-${CONTECO_TAG}/streamsets-libs/streamsets-datacollector-elasticsearch_5-lib
 COPY --from=kafka /opt/streamsets-datacollector-3.19.0/streamsets-libs/streamsets-datacollector-apache-kafka_2_0-lib /opt/streamsets-datacollector-${CONTECO_TAG}/streamsets-libs/streamsets-datacollector-apache-kafka_2_0-lib
 ##### END external/Dockerfile/conteco #####
